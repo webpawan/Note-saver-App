@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Note-saver-App/static/css/main.611b169d.css",
+    "main.js": "/Note-saver-App/static/js/main.329d9c50.js",
+    "index.html": "/Note-saver-App/index.html",
+    "main.611b169d.css.map": "/Note-saver-App/static/css/main.611b169d.css.map",
+    "main.329d9c50.js.map": "/Note-saver-App/static/js/main.329d9c50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.611b169d.css",
+    "static/js/main.329d9c50.js"
+  ]
+}
