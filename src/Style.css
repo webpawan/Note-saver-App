@@ -1,8 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
+  overflow-x: hidden;
 }
 
 textarea {
   height: 10rem !important;
+}
+
+.footer {
+  position: absolute;
+  top: 94.6%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  height: 100vh;
+  position: relative;
 }

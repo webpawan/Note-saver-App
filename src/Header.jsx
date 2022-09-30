@@ -1,4 +1,7 @@
 import React from "react";
+// import Logo from '../src/img.logo.svg';
+import logo from '../src/img/logo.svg'
+
 
 const Header = () => {
     return (
@@ -8,7 +11,7 @@ const Header = () => {
 
             <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">Logo</a>
+              <a className="navbar-brand img-fluid" href="/"><img src={logo} style={{height:'40px'}}  alt="bhai" /></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +24,7 @@ const Header = () => {
       </ul>
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" />
-        <button className="btn btn-outline-success" type="submit">Search</button>
+        <button className="btn btn-outline-primary" type="submit">Search</button>
       </form>
     </div>
   </div>
