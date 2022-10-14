@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Note = ({data,deletenote,noteEdit}) => {
-    console.log(data);
+   
     return  <div className="container py-4 my-3">
                     <div className="row">
              {data.map((item)=>{

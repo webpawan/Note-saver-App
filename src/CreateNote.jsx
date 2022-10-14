@@ -14,14 +14,21 @@ setInput({...input,[name]:value});
  
 const setdata = (e) =>{
   e.preventDefault();
-
 if(isediting){
 
+ setList(
+  list.map((item)=>{
+    if(item.id === myid){
+      return {...item,title:input.title,desc:input.desc}
+    }
+    return item
+  })
+ )
 
   setisediting(false)
-
+  setInput({id:'',title:'',desc:''}); 
 }else{
- 
+
 let newdata = {...input,id:new Date().getTime().toString()};
 setList([...list,newdata]);
 setInput({id:'',title:'',desc:''});
