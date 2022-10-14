@@ -5,6 +5,13 @@
   overflow-x: hidden;
 }
 
+.content{
+  /* background-color: red; */
+  
+  height: calc(100vh - 45px);
+  
+}
+
 textarea {
   height: 10rem !important;
 }
@@ -13,13 +20,13 @@ textarea {
   /* position: absolute; */
   /* top: 94.6%; */
   /* width: 100%; */
-  display: flex;
-  justify-content: center;
+  
 }
 
 .main {
   height: 100vh;
   position: relative;
+  
 }
 
 

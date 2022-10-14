@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Note from "./Note";
+
+const getlocalstorage = () =>{
+
+let list = localStorage.getItem('list');
+if(list){
+return JSON.parse(localStorage.getItem('list'))
+}else{
+return []
+}
+
+}
+
 
 const CreateNote = () => {
 const [input, setInput] = useState({id:'',title:'',desc:''});
-const [list, setList] = useState([]);
+const [list, setList] = useState(getlocalstorage());
 const [isediting, setisediting] = useState(false);
 const [myid, setid] = useState(null);
 
@@ -48,6 +60,12 @@ setisediting(true)
 setInput({title:edititem.title,desc:edititem.desc})
 setid(id);
 }
+
+
+useEffect(()=>{
+localStorage.setItem('list',JSON.stringify(list));
+},[list])
+
 
     return (
         <>

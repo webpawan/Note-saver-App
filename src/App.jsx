@@ -12,12 +12,12 @@ const App = () => {
         <>
             <div className="main">
             <div className="row">
-                <div className=" mainBody mx-auto">
+                <div className="content mainBody mx-auto">
                 <Header/>
                 <CreateNote/> 
                 
-                <Footer /> 
                 </div>
+                <Footer /> 
             </div> 
         </div>
             
