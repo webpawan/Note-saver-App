@@ -10,9 +10,9 @@ textarea {
 }
 
 .footer {
-  position: absolute;
-  top: 94.6%;
-  width: 100%;
+  /* position: absolute; */
+  /* top: 94.6%; */
+  /* width: 100%; */
   display: flex;
   justify-content: center;
 }

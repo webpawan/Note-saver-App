@@ -1,50 +1,38 @@
 import React, { useState } from "react";
+import Note from "./Note";
 
-const CreateNote = (props) => {
-  const [note, setnote] = useState({
-    title: '',
-    content:'',
-  });
+const CreateNote = () => {
+const [input, setInput] = useState({id:'',title:'',desc:''});
+const [list, setList] = useState([]);
 
-  const InputEvent = (e) => {
-    // const value = e.target.value; 
-    // const name = e.target.name; 
-  
-    // es6 array des.. 
-    const { name, value } = e.target;
-
-    setnote((prevdata) => {
-      return {
-        ...prevdata,
-        [name]: value,
-      };
-    });
-   
-  }
-
-  const addevent = () => {
-    props.passnote(note);
-    setnote({
-      title: '',
-      content:'',
-    })
+const inputhandler = (e) =>{
+const {name,value} = e.target;
+setInput({...input,[name]:value});
+}
+ 
+const setdata = (e) =>{
+e.preventDefault();
+let newdata = {...input,id:new Date().getTime().toString()};
+setList([...list,newdata]);
 }
 
     return (
         <>
           <section className="input mx-auto w-50 my-5">
-            <div className="input-group mb-3">
-            <input type="text" className="form-control" name="title" onChange={InputEvent} value={note.title} placeholder="Title" />
+           <form action="" onSubmit={setdata}>
+           <div className="input-group mb-3">
+            <input type="text" className="form-control" onChange={inputhandler} value={input.title} name='title' placeholder="Title" />
         </div>
         <div className="input-group">
-        <textarea className="form-control m-50" name="content" onChange={InputEvent} value={note.content} placeholder="write your note"></textarea>
+        <textarea className="form-control m-50" onChange={inputhandler}  value={input.desc} name='desc'placeholder="write your note"></textarea>
                 </div>
-                <button className="btn btn-outline-primary my-2" onClick={addevent}>
+                <button type="submit" className="btn btn-outline-primary my-2" >
                 <i className="fa-solid fa-plus"></i>
                 </button>
-
+           </form>
           </section>
-
+          {/* -------- show note*/}
+          <Note/>
         </>
   )
 
