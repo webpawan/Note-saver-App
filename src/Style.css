@@ -7,25 +7,39 @@
 
 .content{
   /* background-color: red; */
-  
-  height: calc(100vh - 45px);
-  
+  height: calc(100vh - 45px); 
 }
+
 
 textarea {
   height: 10rem !important;
 }
 
-.footer {
-  /* position: absolute; */
-  /* top: 94.6%; */
-  /* width: 100%; */
-  
+@media screen and (max-width: 480px) {
+.input{
+  width: 75% !important;
 }
+
+}
+
 
 .main {
   height: 100vh;
   position: relative;
+  
+}
+
+
+.card{
+  
+animation-name: bhia;
+animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+animation-duration: 1s;
+}
+
+
+.copyright{
+  font-size:.5rem;
   
 }
 
