@@ -1,6 +1,5 @@
 import React from "react";
-// import Logo from '../src/img.logo.svg';
-import logo from "../src/img/logo.svg";
+import logo from "../img/logo.svg";
 
 const Header = () => {
   return (
@@ -30,6 +29,7 @@ const Header = () => {
                   placeholder="Search"
                 />
               </form>
+              
             </div>
           </div>
         </nav>

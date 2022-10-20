@@ -11,17 +11,27 @@ const getlocalstorage = () => {
 };
 
 const CreateNote = () => {
-  const [input, setInput] = useState({ id: "", title: "", desc: "" });
+  const [input, setInput] = useState({ id: "", title: "", desc: ""});
   const [list, setList] = useState(getlocalstorage());
   const [isediting, setisediting] = useState(false);
   const [myid, setid] = useState(null);
+const [color, setcolor] = useState('white');
 
   const inputhandler = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
 
+  const pickcolor = (e) =>{
+setcolor(e.target.id);
+
+  }
+
+
+  
+
   const setdata = (e) => {
+    
     e.preventDefault();
     if (isediting) {
       setList(
@@ -33,11 +43,15 @@ const CreateNote = () => {
         })
       );
       setisediting(false);
-      setInput({ id: "", title: "", desc: "" });
+      setcolor('white');
+      setInput({ id: "", title: "", desc: ""});
+     
     } else {
-      let newdata = { ...input, id: new Date().getTime().toString() };
+      let newdata = { ...input, id: new Date().getTime().toString(),color };
       setList([...list, newdata]);
-      setInput({ id: "", title: "", desc: "" });
+      setcolor('white');
+      setInput({ id: "", title: "", desc: ""});
+      
     }
   };
 
@@ -56,10 +70,12 @@ const CreateNote = () => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
 
+  
+
   return (
     <>
-      <section className="input mx-auto w-50 my-5">
-        <form action="" onSubmit={setdata}>
+      <section className="input mx-auto w-50 my-5 ">
+        <form action="" onSubmit={setdata} >
           <div className="input-group mb-3">
             <input
               type="text"
@@ -80,14 +96,28 @@ const CreateNote = () => {
               placeholder="write your note"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-outline-primary my-2">
+          
+          
+        </form>
+        <div className="d-flex align-items-center mt-3">
+        <button type="submit" onClick={setdata}  className="btn btn-outline-primary my-2 me-5 d-inline">
             {!isediting ? (
               <i className="fa-solid fa-plus"></i>
             ) : (
               <i className="fa-solid fa-pen-to-square"></i>
             )}
           </button>
-        </form>
+          
+          <div className="d-flex mycolors " onClick={pickcolor}>
+            <button className="btn btn-outline-primar y" >select colors</button>
+            <button className="btn btn-danger mx-2 rounded-5"   id="red" ></button>
+      
+          <button className="btn btn-primary mx-2 rounded-5"  id="blue"></button>
+         
+          <button className="btn btn-dark mx-2 rounded-5"  id="dark"></button>
+          </div>
+        </div>
+          
       </section>
       {/* -------- show note*/}
 

@@ -1,7 +1,8 @@
 import React from "react";
-import Header from "./Header";
-import CreateNote from "./CreateNote";
-import Footer from "./Footer";
+import Header from "./component/Header";
+import CreateNote from "./component/CreateNote";
+import Footer from "./component/Footer";
+
 const App = () => {
   return (
     <>

@@ -2,11 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Note = ({ data, deletenote, noteEdit }) => {
+
   return (
-    <div className="container py-4 my-3">
+    <div className="container ">
       <div className="row">
         {data.map((item) => {
-          const { id, title, desc } = item;
+      
+          const { id, title, desc,color } = item;
+            
           return (
             <motion.div
               className="col-lg-4 col-md-3 col-sm-6 my-3"
@@ -14,8 +17,8 @@ const Note = ({ data, deletenote, noteEdit }) => {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
-              <div className="card py-1">
-                <div className="card-body ">
+              <div className="card py-1 bg-light " id={{}}>
+                <div className="card-body " >
                   <h5 className="card-title py-1">{title}</h5>
                   <p className="card-text">{desc}</p>
 
