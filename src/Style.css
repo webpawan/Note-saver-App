@@ -5,6 +5,7 @@
   overflow-x: hidden;
 }
 
+
 .content{
   /* background-color: red; */
   height: calc(100vh - 45px); 
@@ -44,14 +45,30 @@ animation-duration: 1s;
 }
 
 #red{
-  background-color: rgb(255 83 83) !important;
+  background: linear-gradient(180deg,rgba(255, 4, 4, 0.792),rgba(255, 4, 4, 0.271)) !important;
+  /* box-shadow: 4px 4px 10px red; */
 }
 #blue{
-  background-color: rgb(0 175 254) !important;
+  background:linear-gradient(180deg,#00affe,#00aefe53)  !important;
+  /* box-shadow: 4px 4px 10px cyan; */
+
 }
 #dark{
-  background-color: rgb(33 37 41) !important;
+  background: linear-gradient(18deg,#004768 10%,rgba(72, 0, 0, 0.816)90%) !important;
+  /* box-shadow: 4px 4px 10px black; */
+
 }
 #light{
   color: white !important;
+}
+
+.tagline{
+/* padding: 0 !important; */
+border: none !important;
+opacity: none !important;
+}
+
+.tagicon{
+  
+  /* font-size: 1.5rem !important; */
 }
