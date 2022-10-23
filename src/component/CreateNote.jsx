@@ -1,85 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../MyAllStates";
 import Note from "./Note";
 
-const getlocalstorage = () => {
-  let list = localStorage.getItem("list");
-  if (list) {
-    return JSON.parse(localStorage.getItem("list"));
-  } else {
-    return [];
-  }
-};
-
 const CreateNote = () => {
-  const [input, setInput] = useState({ id: "", title: "", desc: "" });
-  const [list, setList] = useState(getlocalstorage());
-  const [isediting, setisediting] = useState(false);
-  const [myid, setid] = useState(null);
-  const [color, setcolor] = useState("");
-  const [tags, setTags] = useState({tag:""});
-  
-  const inputhandler = (e) => {
-    const { name, value } = e.target;
-    setInput({ ...input, [name]: value });
-  };
-
-  const pickcolor = (e) => {
-    setcolor(e.target.id);
-  };
-
-  const pickTag = (e) => {
-    let mytag = e.target.className;
-    
-   
-    setTags({tag:mytag});
-  };
-
-  const setdata = (e) => {
-    e.preventDefault();
-    if (isediting) {
-      setList(
-        list.map((item) => {
-          if (item.id === myid) {
-            return {
-              ...item,
-              title: input.title,
-              desc: input.desc,
-              color: color,
-              tag:tags.tag
-            };
-          }
-          return item;
-        })
-      );
-      setisediting(false);
-      setcolor(" ");
-      setTags({tag:" "})
-      setInput({ id: "", title: "", desc: "" });
-    } else if (input.title !== "") {
-     
-      let newdata = { ...input, id: new Date().getTime().toString(), color,...tags };
-     
-      setList([...list, newdata]);
-      setcolor("white");
-      setTags({tag:""});
-      setInput({ id: "", title: "", desc: "" });
-    }
-  };
-
-  const deletenote = (id) => {
-    setList(list.filter((item) => item.id !== id));
-  };
-
-  const noteEdit = (id) => {
-    const edititem = list.find((item) => item.id === id);
-    setisediting(true);
-    setInput({ title: edititem.title, desc: edititem.desc });
-    setid(id);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list));
-  }, [list]);
+  const {
+    input,
+    inputhandler,
+    pickcolor,
+    pickTag,
+    setdata,
+    deletenote,
+    noteEdit,
+    list,
+    isediting,
+  } = useContext(AppContext);
 
   return (
     <>
@@ -125,11 +59,11 @@ const CreateNote = () => {
               onClick={pickcolor}
             >
               <button className="btn btn-outline-primar ">
-                select colors{" "}
+                select colors
                 <i className="fa-sharp fa-solid fa-paintbrush"></i>
               </button>
               <button
-                className="btn btn-danger mx-2 rounded-5"
+                className="btn btn-danger mx-2 rounded-5 "
                 id="red"
               ></button>
 
@@ -177,7 +111,6 @@ const CreateNote = () => {
               </span>
 
               <span
-              
                 data-bs-toggle="tooltip"
                 data-bs-placement="bottom"
                 title="--> Birthday"

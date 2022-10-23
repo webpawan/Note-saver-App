@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../img/logo.svg";
-
+import { AppContext } from "../MyAllStates";
 const Header = () => {
+  // const data = useContext(AppContext);
+  // console.log(data.state2);
+
   return (
     <>
       <header className="header">
@@ -29,7 +32,6 @@ const Header = () => {
                   placeholder="Search"
                 />
               </form>
-              
             </div>
           </div>
         </nav>

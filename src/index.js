@@ -1,14 +1,20 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Style.css";
-// import { AppProvider } from "./component/Context";
+import { AppProvider } from "./MyAllStates";
 
-ReactDom.render(
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <>
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </>,
-  document.getElementById("root")
 );
+

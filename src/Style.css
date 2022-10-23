@@ -46,8 +46,11 @@ animation-duration: 1s;
 
 #red{
   background: linear-gradient(180deg,rgba(255, 4, 4, 0.792),rgba(255, 4, 4, 0.271)) !important;
-  /* box-shadow: 4px 4px 10px red; */
+
 }
+
+
+
 #blue{
   background:linear-gradient(180deg,#00affe,#00aefe53)  !important;
   /* box-shadow: 4px 4px 10px cyan; */

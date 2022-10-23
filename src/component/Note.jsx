@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 const Note = ({ data, deletenote, noteEdit }) => {
 
+  
+
   return (
     <div className="container my-5">
       <div className="row">
