@@ -18,12 +18,36 @@ textarea {
   height: 10rem !important;
 }
 
-@media screen and (max-width: 480px) {
-.input{
-  width: 75% !important;
-}
 
+
+@media screen and (max-width: 900px) {
+  .input{
+    width: 90% !important;
+  }
+
+  .mycolors button{
+    padding: 10px 10px !important;
+    font-size: 5px;
+
+  }
+
+.mycolors span{
+  font-size: 5px;
 }
+  
+  }
+
+  @media screen and (max-width: 600px) {
+    .input{
+      width: 95% !important;
+    }
+
+    .plus-btn{
+      padding: 5px 8px;
+    }
+    
+    
+    }
 
 
 .main {
@@ -33,23 +57,17 @@ textarea {
 }
 
 
-.card{
-  
-animation-name: bhia;
-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-animation-duration: 1s;
-}
-
-
 .copyright{
   font-size:.5rem;
   
 }
 
+
 #red{
   background: linear-gradient(180deg,rgba(255, 4, 4, 0.792),rgba(255, 4, 4, 0.271)) !important;
 transition: all .2s;
 border: none !important;
+
 
 }
 
@@ -58,15 +76,21 @@ border: none !important;
   background:linear-gradient(180deg,#00affe,#00aefe53)  !important;
   border: none !important;
   transition: all .2s;
+ 
 
 
 }
 #red-blue{
   background: linear-gradient(18deg,#004768 10%,rgba(72, 0, 0, 0.816)90%) !important;
-
   border: none !important;
   transition: all .2s;
 
+
+
+}
+
+.element-size{
+  padding: 15px 15px;
 }
 #light{
   color: white !important;
@@ -81,4 +105,21 @@ opacity: none !important;
 
 /* ///////////////////////// media query ////////////////////////////// */
 
+
+
+
+
+
+@media only screen and (max-width: 400px) {
+  .mycolors button{
+    padding: 10px 10px;
+    font-size: 2.5px;
+  }
+
+.mycolors span{
+  font-size: 5px;
+}
+
+
+}
 

@@ -6,7 +6,7 @@ import Footer from "./component/Footer";
 const App = () => {
   return (
     <>
-      <div className="main">
+      <div className="main ">
         <div className="row">
           <div className="content mainBody mx-auto">
             <Header />
