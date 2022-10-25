@@ -1,7 +1,8 @@
+import React, { useState, useEffect, useRef } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import React, { useState, useEffect,useRef } from "react";
 const AppContext = React.createContext();
-
 const getlocalstorage = () => {
   let list = localStorage.getItem("list");
   if (list) {
@@ -10,7 +11,7 @@ const getlocalstorage = () => {
     return [];
   }
 };
-const keys = ["title","desc",'color'];
+const keys = ["title", "desc", "color"];
 
 const AppProvider = ({ children }) => {
   const [input, setInput] = useState({ id: "", title: "", desc: "" });
@@ -21,15 +22,14 @@ const AppProvider = ({ children }) => {
   const [myid, setid] = useState(null);
   const [query, setQuery] = useState("");
 
-
-const myinput = useRef("");
-
+  const myinput = useRef("");
 
   const setdata = (e) => {
     e.preventDefault();
     if (isediting) {
       setList(
         list.map((item) => {
+          
           if (item.id === myid) {
             return {
               ...item,
@@ -57,10 +57,24 @@ const myinput = useRef("");
       setcolor("white");
       setTags({ tag: "" });
       setInput({ id: "", title: "", desc: "" });
+      
     }else{
-    
-     
+      notify();
     }
+    
+  };
+
+  const notify = () => {
+    toast.warn("Please write some title", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const inputhandler = (e) => {
@@ -73,14 +87,15 @@ const myinput = useRef("");
   };
 
   const pickTag = (e) => {
-    let mytag = e.target.className;
+    let mytag = e.target.children[0].className;
     setTags({ tag: mytag });
+   
   };
 
   const deletenote = (id) => {
     setList(list.filter((item) => item.id !== id));
   };
-  
+
   const noteEdit = (id) => {
     const edititem = list.find((item) => item.id === id);
     setisediting(true);
@@ -88,12 +103,11 @@ const myinput = useRef("");
     setid(id);
   };
 
-  const search = (data) =>{
-    return data.filter((item)=> {
-     return keys.some((key)=> item[key].toLowerCase().includes(query))
-    })
-    }
-
+  const search = (data) => {
+    return data.filter((item) => {
+      return keys.some((key) => item[key].toLowerCase().includes(query));
+    });
+  };
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
@@ -123,7 +137,7 @@ const myinput = useRef("");
         query,
         setQuery,
         search,
-        myinput
+        myinput,
       }}
     >
       {children}

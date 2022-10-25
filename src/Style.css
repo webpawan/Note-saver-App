@@ -70,6 +70,7 @@ border: none !important;
 }
 #light{
   color: white !important;
+
 }
 
 .tagline{
@@ -78,7 +79,6 @@ border: none !important;
 opacity: none !important;
 }
 
-.shadow{
+/* ///////////////////////// media query ////////////////////////////// */
 
-}
 
