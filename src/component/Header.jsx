@@ -1,13 +1,14 @@
+import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import logo from "../img/logo.svg";
 import { AppContext } from "../MyAllStates";
-const Header = () => {
-  // const data = useContext(AppContext);
-  // console.log(data.state2);
 
+const Header = () => {
+
+const {setQuery} = useContext(AppContext); 
   return (
     <>
-      <header className="header">
+      <motion.header className="header" initial={{opacity:0 ,y : '-10vw' } } animate={{opacity:1,y:'0vh',   }} transition={{ bounce:.25 ,type:'spring' }}>
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
             <a className="navbar-brand img-fluid" href="/">
@@ -30,12 +31,13 @@ const Header = () => {
                   className="form-control me-2"
                   type="search"
                   placeholder="Search"
+                  onChange={e=>setQuery(e.target.value)}
                 />
               </form>
             </div>
           </div>
         </nav>
-      </header>
+      </motion.header>
     </>
   );
 };

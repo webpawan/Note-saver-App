@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import { AppContext } from "../MyAllStates";
 import Note from "./Note";
+
 
 const CreateNote = () => {
   const {
@@ -13,7 +15,12 @@ const CreateNote = () => {
     noteEdit,
     list,
     isediting,
+    search,
+    myinput
   } = useContext(AppContext);
+
+
+
 
   return (
     <>
@@ -21,6 +28,7 @@ const CreateNote = () => {
         <form action="" onSubmit={setdata}>
           <div className="input-group mb-3">
             <input
+ref={myinput}
               type="text"
               className="form-control"
               required
@@ -62,20 +70,29 @@ const CreateNote = () => {
                 select colors
                 <i className="fa-sharp fa-solid fa-paintbrush"></i>
               </button>
-              <button
+              <motion.button whileInView={{boxShadow:' 3px 3px 7px red'} } whileTap={{boxShadow:'1px 1px 4px red',transition: { duration: .1 } ,y:'2px'}}
                 className="btn btn-danger mx-2 rounded-5 "
                 id="red"
-              ></button>
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="red"
+              ></motion.button>
 
-              <button
+              <motion.button whileInView={{boxShadow:' 3px 3px 7px cyan'} } whileTap={{boxShadow:'1px 1px 4px cyan',transition: { duration: .1 } ,y:'2px'}}
                 className="btn btn-primary mx-2 rounded-5"
                 id="blue"
-              ></button>
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="blue"
+              ></motion.button>
 
-              <button
+              <motion.button whileInView={{boxShadow:' 3px 3px 7px #6b0303'} } whileTap={{boxShadow:'1px 1px 4px #6b0303',transition: { duration: .1 } ,y:'2px'}}
                 className="btn btn-dark mx-2 rounded-5"
-                id="dark"
-              ></button>
+                id="red-blue"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="red-blue"
+              ></motion.button>
             </div>
 
             <span className="mx-2">
@@ -86,12 +103,12 @@ const CreateNote = () => {
               className="d-flex mycolors pickcolorsize  p-2"
               onClick={pickTag}
             >
-              <span
+              <span 
                 data-bs-toggle="tooltip"
                 data-bs-placement="bottom"
                 title="--> study time"
               >
-                <i className="fa-solid fa-book tagicon p-2 bg-dark text-light rounded mx-2"></i>
+                <motion.i   whileInView={{boxShadow:' 3px 3px 7px black'} } whileTap={{y:'-30px'}} className="fa-solid fa-book tagicon p-2 bg-dark text-light rounded mx-2"></motion.i>
               </span>
 
               <span
@@ -99,7 +116,7 @@ const CreateNote = () => {
                 data-bs-placement="bottom"
                 title="--> othes  work"
               >
-                <i className="fa-solid tagicon fa-pen p-2 bg-dark text-light rounded mx-2"></i>
+                <motion.i whileInView={{boxShadow:' 3px 3px 7px black'} } whileTap={{boxShadow:'1px 1px 4px black',y:'-30px'}} className="fa-solid tagicon fa-pen p-2 bg-dark text-light rounded mx-2"></motion.i>
               </span>
 
               <span
@@ -107,7 +124,7 @@ const CreateNote = () => {
                 data-bs-placement="bottom"
                 title="--> shopping time"
               >
-                <i className="fa-solid tagicon fa-cart-shopping p-2 bg-dark text-light rounded mx-2"></i>
+                <motion.i whileInView={{boxShadow:' 3px 3px 7px black'} } whileTap={{boxShadow:'1px 1px 4px black',y:'-30px'}} className="fa-solid tagicon fa-cart-shopping p-2 bg-dark text-light rounded mx-2"></motion.i>
               </span>
 
               <span
@@ -115,7 +132,7 @@ const CreateNote = () => {
                 data-bs-placement="bottom"
                 title="--> Birthday"
               >
-                <i className="fa-solid tagicon fa-cake-candles  p-2 bg-dark text-light rounded mx-2"></i>
+                <motion.i whileInView={{boxShadow:' 3px 3px 7px black'} } whileTap={{boxShadow:'1px 1px 4px black',y:'-30px'}} className="fa-solid tagicon fa-cake-candles  p-2 bg-dark text-light rounded mx-2"></motion.i>
               </span>
             </div>
           </div>
@@ -124,7 +141,7 @@ const CreateNote = () => {
       {/* -------- show note*/}
 
       {list.length > 0 && (
-        <Note data={list} deletenote={deletenote} noteEdit={noteEdit} />
+        <Note data={search(list)} deletenote={deletenote} noteEdit={noteEdit} />
       )}
     </>
   );

@@ -12,6 +12,8 @@
 }
 
 
+
+
 textarea {
   height: 10rem !important;
 }
@@ -46,19 +48,24 @@ animation-duration: 1s;
 
 #red{
   background: linear-gradient(180deg,rgba(255, 4, 4, 0.792),rgba(255, 4, 4, 0.271)) !important;
+transition: all .2s;
+border: none !important;
 
 }
-
 
 
 #blue{
   background:linear-gradient(180deg,#00affe,#00aefe53)  !important;
-  /* box-shadow: 4px 4px 10px cyan; */
+  border: none !important;
+  transition: all .2s;
+
 
 }
-#dark{
+#red-blue{
   background: linear-gradient(18deg,#004768 10%,rgba(72, 0, 0, 0.816)90%) !important;
-  /* box-shadow: 4px 4px 10px black; */
+
+  border: none !important;
+  transition: all .2s;
 
 }
 #light{
@@ -71,7 +78,7 @@ border: none !important;
 opacity: none !important;
 }
 
-.tagicon{
-  
-  /* font-size: 1.5rem !important; */
+.shadow{
+
 }
+

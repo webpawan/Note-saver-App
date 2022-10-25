@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useState, useEffect,useRef } from "react";
 const AppContext = React.createContext();
 
 const getlocalstorage = () => {
@@ -9,6 +10,7 @@ const getlocalstorage = () => {
     return [];
   }
 };
+const keys = ["title","desc",'color'];
 
 const AppProvider = ({ children }) => {
   const [input, setInput] = useState({ id: "", title: "", desc: "" });
@@ -17,6 +19,11 @@ const AppProvider = ({ children }) => {
   const [list, setList] = useState(getlocalstorage());
   const [isediting, setisediting] = useState(false);
   const [myid, setid] = useState(null);
+  const [query, setQuery] = useState("");
+
+
+const myinput = useRef("");
+
 
   const setdata = (e) => {
     e.preventDefault();
@@ -50,6 +57,9 @@ const AppProvider = ({ children }) => {
       setcolor("white");
       setTags({ tag: "" });
       setInput({ id: "", title: "", desc: "" });
+    }else{
+    
+     
     }
   };
 
@@ -61,6 +71,7 @@ const AppProvider = ({ children }) => {
   const pickcolor = (e) => {
     setcolor(e.target.id);
   };
+
   const pickTag = (e) => {
     let mytag = e.target.className;
     setTags({ tag: mytag });
@@ -69,12 +80,20 @@ const AppProvider = ({ children }) => {
   const deletenote = (id) => {
     setList(list.filter((item) => item.id !== id));
   };
+  
   const noteEdit = (id) => {
     const edititem = list.find((item) => item.id === id);
     setisediting(true);
     setInput({ title: edititem.title, desc: edititem.desc });
     setid(id);
   };
+
+  const search = (data) =>{
+    return data.filter((item)=> {
+     return keys.some((key)=> item[key].toLowerCase().includes(query))
+    })
+    }
+
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
@@ -101,6 +120,10 @@ const AppProvider = ({ children }) => {
         setisediting,
         myid,
         setid,
+        query,
+        setQuery,
+        search,
+        myinput
       }}
     >
       {children}

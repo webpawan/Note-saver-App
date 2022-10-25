@@ -6,15 +6,11 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Style.css";
 import { AppProvider } from "./MyAllStates";
 
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <AppProvider>
       <App />
     </AppProvider>
-  </>,
+  </>
 );
-
