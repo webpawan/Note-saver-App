@@ -27,13 +27,9 @@ textarea {
 
   .mycolors button{
     padding: 10px 10px !important;
-    font-size: 5px;
-
+   
   }
 
-.mycolors span{
-  font-size: 5px;
-}
   
   }
 
@@ -42,10 +38,7 @@ textarea {
       width: 95% !important;
     }
 
-    .plus-btn{
-      padding: 5px 8px;
-    }
-    
+   
     
     }
 
@@ -101,25 +94,5 @@ border: none !important;
 /* padding: 0 !important; */
 border: none !important;
 opacity: none !important;
-}
-
-/* ///////////////////////// media query ////////////////////////////// */
-
-
-
-
-
-
-@media only screen and (max-width: 400px) {
-  .mycolors button{
-    padding: 10px 10px;
-    font-size: 2.5px;
-  }
-
-.mycolors span{
-  font-size: 5px;
-}
-
-
 }
 
