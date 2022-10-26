@@ -197,9 +197,16 @@ const CreateNote = () => {
       </section>
       {/* -------- show note*/}
 
+      <motion.div initial={{opacity:0,scale:1.5 }} animate={{opacity:1,scale:1}} transition={{
+  delay: 1.5,  duration: 3  ,
+  type: "spring",
+      
+  stiffness: 100
+}}>
       {list.length > 0 && (
         <Note data={search(list)} deletenote={deletenote} noteEdit={noteEdit} />
       )}
+      </motion.div>
     </>
   );
 };
