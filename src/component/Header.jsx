@@ -31,14 +31,14 @@ const Header = () => {
               className="collapse navbar-collapse "
               id="navbarSupportedContent"
             >
-              <form className="d-flex mx-auto" role="search">
+             
                 <input
                   className="form-control me-2"
                   type="search"
                   placeholder="Search"
                   onChange={(e) => setQuery(e.target.value)}
                 />
-              </form>
+            
             </div>
           </div>
         </nav>
