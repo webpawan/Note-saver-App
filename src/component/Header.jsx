@@ -32,12 +32,14 @@ const Header = () => {
               id="navbarSupportedContent"
             >
              
+                <div className="mx-auto">
                 <input
-                  className="form-control me-2"
+                  className="form-control "
                   type="search"
-                  placeholder="Search"
+                  placeholder="Search in small letter "
                   onChange={(e) => setQuery(e.target.value)}
                 />
+                </div>
             
             </div>
           </div>
