@@ -98,16 +98,8 @@ font-size: 1rem !important;
 background-color: transparent  !important;
 }
 .tagicon{
-  background-color: red;
+  background-color:rgba(0, 255, 255, 0.741);
   z-index: 100;
 }
 
-.bha{
- padding: 2px;
-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.532);
- font-size: 2rem;
-}
 
-.bha:hover{
-  box-shadow: 5px 5px 10px black;
-}

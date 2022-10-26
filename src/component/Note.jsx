@@ -16,7 +16,7 @@ const Note = ({ data, deletenote, noteEdit }) => {
               animate={{ y: 0, opacity: 1 }}
             >
               <div
-                className="card py-1 bg-light  text-light bg-dark "
+                className="card shadow py-1 bg-light  text-light bg-dark "
                 id={color}
               >
                 <div className="card-body ">

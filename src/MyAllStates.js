@@ -29,7 +29,6 @@ const AppProvider = ({ children }) => {
     if (isediting) {
       setList(
         list.map((item) => {
-          
           if (item.id === myid) {
             return {
               ...item,
@@ -57,11 +56,9 @@ const AppProvider = ({ children }) => {
       setcolor("white");
       setTags({ tag: "" });
       setInput({ id: "", title: "", desc: "" });
-      
-    }else{
+    } else {
       notify();
     }
-    
   };
 
   const notify = () => {
@@ -89,7 +86,6 @@ const AppProvider = ({ children }) => {
   const pickTag = (e) => {
     let mytag = e.target.className;
     setTags({ tag: mytag });
-   console.log(mytag);
   };
 
   const deletenote = (id) => {
