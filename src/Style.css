@@ -103,3 +103,6 @@ background-color: transparent  !important;
 }
 
 
+input ,textarea{
+  border: 1px solid black !important;
+}
