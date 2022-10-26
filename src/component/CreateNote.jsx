@@ -116,53 +116,39 @@ const CreateNote = () => {
                 </span>
 
                 <div className="" onClick={pickTag}>
-                  <span
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="--> study time"
-                  >
-                    <motion.i
-                      whileInView={{ boxShadow: " 3px 3px 7px black" }}
-                      whileTap={{ boxShadow: "1px 1px 4px black", y: "-30px" }}
-                      className="fa-solid fa-book tagicon p-2 bg-dark text-light rounded m-2 "
-                    ></motion.i>
-                  </span>
 
-                  <span
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="--> othes  work"
-                  >
+                  
                     <motion.i
-                      whileInView={{ boxShadow: " 3px 3px 7px black" }}
-                      whileTap={{ boxShadow: "1px 1px 4px black", y: "-30px" }}
-                      className="fa-solid tagicon fa-pen p-2 bg-dark text-light rounded m-2"
+                    href="#"
+                     
+                      className="fa-solid fa-book p-2 bg-dark text-light  rounded m-2 "
                     ></motion.i>
-                  </span>
+                  
 
-                  <span
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="--> shopping time"
-                  >
+
+
+                 
                     <motion.i
-                      whileInView={{ boxShadow: " 3px 3px 7px black" }}
-                      whileTap={{ boxShadow: "1px 1px 4px black", y: "-30px" }}
+                      
+                      className="fa-solid bg-dark text-light fa-pen p-2  rounded m-2"
+                    ></motion.i>
+            
+
+
+
+                 
+                    <motion.i
+                 
                       className="fa-solid tagicon fa-cart-shopping p-2 bg-dark text-light rounded m-2"
                     ></motion.i>
-                  </span>
+                 
 
-                  <span
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="--> Birthday"
-                  >
+                  
                     <motion.i
-                      whileInView={{ boxShadow: " 3px 3px 7px black" }}
-                      whileTap={{ boxShadow: "1px 1px 4px black", y: "-30px" }}
+                   
                       className="fa-solid tagicon fa-cake-candles  p-2 bg-dark text-light rounded m-2"
                     ></motion.i>
-                  </span>
+                
                 </div>
               </div>
             </div>

@@ -87,9 +87,9 @@ const AppProvider = ({ children }) => {
   };
 
   const pickTag = (e) => {
-    let mytag = e.target.children[0].className;
+    let mytag = e.target.className;
     setTags({ tag: mytag });
-   
+   console.log(mytag);
   };
 
   const deletenote = (id) => {

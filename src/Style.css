@@ -94,5 +94,20 @@ border: none !important;
 /* padding: 0 !important; */
 border: none !important;
 opacity: none !important;
+font-size: 1rem !important;
+background-color: transparent  !important;
+}
+.tagicon{
+  background-color: red;
+  z-index: 100;
 }
 
+.bha{
+ padding: 2px;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.532);
+ font-size: 2rem;
+}
+
+.bha:hover{
+  box-shadow: 5px 5px 10px black;
+}
