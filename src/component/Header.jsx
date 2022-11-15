@@ -25,7 +25,10 @@ const Header = () => {
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className="">
+              <i className="fa-solid fa-magnifying-glass"></i>
+
+              </span>
             </button>
             <div
               className="collapse navbar-collapse "
