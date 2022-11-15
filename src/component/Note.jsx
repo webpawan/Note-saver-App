@@ -24,19 +24,30 @@ const Note = ({ data, deletenote, noteEdit }) => {
                   <p className="card-text">{desc}</p>
 
                   <div className="d-flex  align-items-center justify-content-between">
-                    <div>
+                    <div className="d-flex">
                       <button
-                        className="card-link btn btn-outline-danger "
+                        className="card-link btn btn-outline-danger deleteIcon d-flex "
                         onClick={() => deletenote(id)}
                       >
-                        <i className="fa-solid fa-trash"></i>
+                        {/* <i className="fa-solid fa-trash"></i> */}
+                        <lord-icon
+    src="https://cdn.lordicon.com/kfzfxczd.json"
+    trigger="hover"
+    colors="primary:#e4e4e4"
+    style={{height:'25px',width:"25px"}}>
+</lord-icon>
                       </button>
 
                       <button
-                        className="card-link btn btn-outline-primary btn-delete"
+                        className="card-link btn btn-outline-primary btn-delete d-flex deleteIcon"
                         onClick={() => noteEdit(id)}
                       >
-                        <i className="fa-solid fa-pen-to-square"></i>
+                       <lord-icon
+    src="https://cdn.lordicon.com/vufjamqa.json"
+    trigger="hover"
+    colors="primary:#e4e4e4"
+    style={{height:'25px',width:"25px"}}>
+</lord-icon>
                       </button>
                     </div>
                     <span className=" mt-1">
